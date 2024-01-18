@@ -1,1 +1,2 @@
 # docker-cluster
+!pipeline.jpg
