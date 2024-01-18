@@ -12,5 +12,29 @@ Ce projet vise à créer un environnement Docker complet pour le développement 
 1. Clonez ce référentiel :
    ```bash
    git clone https://github.com/Elmboup/docker-cluster.git
-   cd projet-data-engineering-docker
+   cd docker-cluster
+
+1. Lancer les conteneurs Docker :
+   ```bash
+   docker-compose up -d
+
+2. Accéder aux interfaces utilisateur web des services :
+  
+- Airflow: http://localhost:8080
+- Spark Master: http://localhost:8081
+- hadoop Namenode: http://localhost:9870
+- Superset: http://localhost:8088
+- Jupyter: http://localhost:8888
+- Zoho Analytics: http://localhost:8083 (Adapter le port en fonction de la configuration)
+
+## Services inclus
+- Airflow: Orchestration des tâches du pipeline de données.
+- Spark: Traitement des données en mode distribué.
+- Hive: Stockage des métadonnées et requêtage des données.
+- Hadoop: Stockage distribué des données.
+- PostgreSQL: Stockage des métadonnées Airflow et Hive.
+- Jupyter: Environnement de notebook pour l'exploration des données.
+- Superset: Création de tableaux de bord et visualisation des données.
+- Zoho Analytics: Outil d'analyse de données cloud.
+
 
