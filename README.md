@@ -25,7 +25,8 @@ Ce projet vise à créer un environnement Docker complet pour le développement 
 - hadoop Namenode: http://localhost:9870
 - Superset: http://localhost:8088
 - Jupyter: http://localhost:8888
-- Zoho Analytics: http://localhost:8083 (Adapter le port en fonction de la configuration)
+- Zoho Analytics: http://localhost:8087
+Adapter les ports en fonction de la configuration. 
 
 ## Services inclus
 - Airflow: Orchestration des tâches du pipeline de données.
@@ -35,6 +36,6 @@ Ce projet vise à créer un environnement Docker complet pour le développement 
 - PostgreSQL: Stockage des métadonnées Airflow et Hive.
 - Jupyter: Environnement de notebook pour l'exploration des données.
 - Superset: Création de tableaux de bord et visualisation des données.
-- Zoho Analytics: Outil d'analyse de données cloud.
+- Zoho Analytics: Outil BI.
 
 
