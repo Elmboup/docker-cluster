@@ -1,0 +1,9 @@
+celery
+kombu
+tornado
+werkzeug
+pyspark==3.5.0
+SQLAlchemy
+wtforms
+PyYAML
+gunicorn
