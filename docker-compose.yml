@@ -256,19 +256,16 @@ services:
             _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflowass}
 
     
-    zoho-analytics:
-        image: zohoanalytics/onprem:latest
-        container_name: zoho-analytics
+    hue:
+        image: gethue/hue:latest
+        container_name: hue
         ports:
-        - "8087:8087" 
-        environment:
-            - ZOHOANALYTICS_PORT=8087
-            - ZOHOANALYTICS_DB_PATH=/opt/zohoanalytics/db
-        volumes:
-            - ./zohoanalytics_db:/opt/zohoanalytics/db
+          - "8890:8888"
+        depends_on:
+          - hive-server
         networks:
-            - hadoop
-   
+          - hadoop
+
     powerbi: 
         image: quintoandar/powerbi-dashboards
         container_name: powerbi 
@@ -278,12 +275,14 @@ services:
             - ACCEPT_EULA=Y
     # Apache Superset 
     superset: 
-        image: apache/superset:latest 
+        image: ukwa/superset:latest 
         networks: 
             - hadoop 
         ports: 
             - "8089:8088" # Port pour accéder à Superset depuis l'extérieur 
         environment: 
+            - SUPERSET_ENV=production 
+            - HIVE_THRIFT_URI=hive://hive-server:10000/default
             - SUPERSET_LOAD_EXAMPLES='false' # Option pour ne pas charger les exemples par défaut 
             - SUPERSET_SECRET_KEY= "DBnP7u1aCI3K1uvJInzfIMZyu6a1C8IsTyWLVub1Tg65F9x+8yPbvMlF"
 #        command: "superset-init --username elou --firstname ElHadji --lastname Mboup --email mboupeh@ept.sn --password supersetass" # Commande pour créer l'administrateur
