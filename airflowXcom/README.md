@@ -18,7 +18,10 @@ Ce projet utilise Apache Airflow pour automatiser la gestion des candidatures pr
 
 ### Limitations de XCom :
 1. **Taille des Données :** XCom est plus adapté pour échanger des petites quantités de données. Pour des volumes de données importants, d'autres mécanismes de stockage comme une base de données externe peuvent être plus appropriés.
-
+NB :  Xcom size limit
+ SQLite—Stored as BLOB type, 2GB limit
+ PostgreSQL—Stored as BYTEA type, 1 GB limit
+ MySQL—Stored as BLOB type, 64 KB limit
 2. **Synchronisation :** XCom fonctionne de manière synchrone, ce qui peut entraîner des problèmes de performances si les tâches dépendent les unes des autres et prennent beaucoup de temps.
 
 3. **Complexité :** Dans des cas complexes, la gestion des dépendances entre les tâches peut devenir complexe avec XCom.
