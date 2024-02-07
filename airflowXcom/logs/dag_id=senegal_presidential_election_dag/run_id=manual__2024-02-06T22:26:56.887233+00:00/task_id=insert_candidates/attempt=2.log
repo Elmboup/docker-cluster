@@ -1,0 +1,46 @@
+[2024-02-06T22:32:14.232+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: senegal_presidential_election_dag.insert_candidates manual__2024-02-06T22:26:56.887233+00:00 [queued]>
+[2024-02-06T22:32:14.242+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: senegal_presidential_election_dag.insert_candidates manual__2024-02-06T22:26:56.887233+00:00 [queued]>
+[2024-02-06T22:32:14.243+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2024-02-06T22:32:14.259+0000] {taskinstance.py:2191} INFO - Executing <Task(PostgresOperator): insert_candidates> on 2024-02-06 22:26:56.887233+00:00
+[2024-02-06T22:32:14.266+0000] {standard_task_runner.py:60} INFO - Started process 473 to run task
+[2024-02-06T22:32:14.270+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'senegal_presidential_election_dag', 'insert_candidates', 'manual__2024-02-06T22:26:56.887233+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/election_xcom.py', '--cfg-path', '/tmp/tmp8xjh1etp']
+[2024-02-06T22:32:14.274+0000] {standard_task_runner.py:88} INFO - Job 27: Subtask insert_candidates
+[2024-02-06T22:32:14.330+0000] {task_command.py:423} INFO - Running <TaskInstance: senegal_presidential_election_dag.insert_candidates manual__2024-02-06T22:26:56.887233+00:00 [running]> on host 4775ae97916b
+[2024-02-06T22:32:14.417+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='el_mboup' AIRFLOW_CTX_DAG_ID='senegal_presidential_election_dag' AIRFLOW_CTX_TASK_ID='insert_candidates' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T22:26:56.887233+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T22:26:56.887233+00:00'
+[2024-02-06T22:32:14.419+0000] {sql.py:276} INFO - Executing: 
+   INSERT INTO candidatures_presidentielle (prenom, nom, parti, statut_validation) VALUES
+   ('Amadou', 'Ba', 'APR', 'validée'),
+   ('Ousmane', 'Sonko', 'ex-PASTEF', 'Rejetée'),
+   ('Karim', 'Wade', 'PDS', 'Rejetée'),
+   ('Pape Djibril', 'Fall', 'Serviteur', 'validée');
+   
+[2024-02-06T22:32:14.429+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-02-06T22:32:14.441+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-02-06T22:32:14.446+0000] {sql.py:450} INFO - Running statement: 
+   INSERT INTO candidatures_presidentielle (prenom, nom, parti, statut_validation) VALUES
+   ('Amadou', 'Ba', 'APR', 'validée'),
+   ('Ousmane', 'Sonko', 'ex-PASTEF', 'Rejetée'),
+   ('Karim', 'Wade', 'PDS', 'Rejetée'),
+   ('Pape Djibril', 'Fall', 'Serviteur', 'validée');
+   , parameters: None
+[2024-02-06T22:32:14.448+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedColumn: column "statut_validation" of relation "candidatures_presidentielle" does not exist
+LINE 2: ... candidatures_presidentielle (prenom, nom, parti, statut_val...
+                                                             ^
+
+[2024-02-06T22:32:14.459+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=senegal_presidential_election_dag, task_id=insert_candidates, execution_date=20240206T222656, start_date=20240206T223214, end_date=20240206T223214
+[2024-02-06T22:32:14.473+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 27 for task insert_candidates (column "statut_validation" of relation "candidatures_presidentielle" does not exist
+LINE 2: ... candidatures_presidentielle (prenom, nom, parti, statut_val...
+                                                             ^
+; 473)
+[2024-02-06T22:32:14.484+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-06T22:32:14.517+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -38,7 +38,7 @@ check_weather_api = HttpSensor(
     task_id='check_weather_api',
     http_conn_id='weather_api',
     method='GET',
-    endpoint='current.json?key=74e0a587956544829b9120259233011&q=Dakar&aqi=no',  # Replace with WeatherAPI endpoint
+    endpoint='current.json?key=...................&q=Dakar&aqi=no',  # Replace with WeatherAPI endpoint with you key
     response_check=lambda response: True if response.status_code == 200 else False,
     poke_interval=60 * 60 * 24,  # Check once a day
     timeout=20,
@@ -69,7 +69,7 @@ def download_weather_data(**kwargs):
                 min_temp_c = day_forecast.get('mintemp_c')
            
 
-                # Écrivez les données récupérées dans le fichier 
+                # Écrivons les données récupérées dans le fichier 
                 file.write(f"{region},{latitude}, {longitude}, {localtime}, {max_temp_c}, {min_temp_c},{humidity}\n")
 
 

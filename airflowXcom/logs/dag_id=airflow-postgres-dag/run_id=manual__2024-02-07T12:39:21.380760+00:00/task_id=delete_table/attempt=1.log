@@ -1,0 +1,17 @@
+[2024-02-07T12:40:35.506+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: airflow-postgres-dag.delete_table manual__2024-02-07T12:39:21.380760+00:00 [queued]>
+[2024-02-07T12:40:35.516+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: airflow-postgres-dag.delete_table manual__2024-02-07T12:39:21.380760+00:00 [queued]>
+[2024-02-07T12:40:35.517+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-02-07T12:40:35.530+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): delete_table> on 2024-02-07 12:39:21.380760+00:00
+[2024-02-07T12:40:35.538+0000] {standard_task_runner.py:60} INFO - Started process 5914 to run task
+[2024-02-07T12:40:35.542+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '***-postgres-dag', 'delete_table', 'manual__2024-02-07T12:39:21.380760+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/election_dag.py', '--cfg-path', '/tmp/tmpe4cpth_9']
+[2024-02-07T12:40:35.543+0000] {standard_task_runner.py:88} INFO - Job 260: Subtask delete_table
+[2024-02-07T12:40:35.595+0000] {task_command.py:423} INFO - Running <TaskInstance: airflow-postgres-dag.delete_table manual__2024-02-07T12:39:21.380760+00:00 [running]> on host 4775ae97916b
+[2024-02-07T12:40:35.689+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='El_mboup' AIRFLOW_CTX_DAG_ID='***-postgres-dag' AIRFLOW_CTX_TASK_ID='delete_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-07T12:39:21.380760+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-07T12:39:21.380760+00:00'
+[2024-02-07T12:40:35.692+0000] {sql.py:276} INFO - Executing: DROP TABLE IF EXISTS candidatures_presidentielle ;
+[2024-02-07T12:40:35.702+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-02-07T12:40:35.713+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-02-07T12:40:35.719+0000] {sql.py:450} INFO - Running statement: DROP TABLE IF EXISTS candidatures_presidentielle ;, parameters: None
+[2024-02-07T12:40:35.734+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-07T12:40:35.744+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=***-postgres-dag, task_id=delete_table, execution_date=20240207T123921, start_date=20240207T124035, end_date=20240207T124035
+[2024-02-07T12:40:35.796+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-07T12:40:35.819+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

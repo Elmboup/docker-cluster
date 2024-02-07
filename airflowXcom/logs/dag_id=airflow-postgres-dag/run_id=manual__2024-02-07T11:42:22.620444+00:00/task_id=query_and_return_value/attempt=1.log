@@ -1,0 +1,14 @@
+[2024-02-07T11:42:39.632+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: airflow-postgres-dag.query_and_return_value manual__2024-02-07T11:42:22.620444+00:00 [queued]>
+[2024-02-07T11:42:39.677+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: airflow-postgres-dag.query_and_return_value manual__2024-02-07T11:42:22.620444+00:00 [queued]>
+[2024-02-07T11:42:39.682+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-02-07T11:42:39.774+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): query_and_return_value> on 2024-02-07 11:42:22.620444+00:00
+[2024-02-07T11:42:39.795+0000] {standard_task_runner.py:60} INFO - Started process 5077 to run task
+[2024-02-07T11:42:39.818+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '***-postgres-dag', 'query_and_return_value', 'manual__2024-02-07T11:42:22.620444+00:00', '--job-id', '247', '--raw', '--subdir', 'DAGS_FOLDER/election_dag.py', '--cfg-path', '/tmp/tmp5z63h0ia']
+[2024-02-07T11:42:39.837+0000] {standard_task_runner.py:88} INFO - Job 247: Subtask query_and_return_value
+[2024-02-07T11:42:39.981+0000] {task_command.py:423} INFO - Running <TaskInstance: airflow-postgres-dag.query_and_return_value manual__2024-02-07T11:42:22.620444+00:00 [running]> on host 4775ae97916b
+[2024-02-07T11:42:40.293+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='El_mboup' AIRFLOW_CTX_DAG_ID='***-postgres-dag' AIRFLOW_CTX_TASK_ID='query_and_return_value' AIRFLOW_CTX_EXECUTION_DATE='2024-02-07T11:42:22.620444+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-07T11:42:22.620444+00:00'
+[2024-02-07T11:42:40.325+0000] {logging_mixin.py:188} INFO - [(1, 'Amadou', 'Ba', 'APR', 'validée'), (4, 'Pape Djibril', 'Fall', 'Serviteur', 'validée')]
+[2024-02-07T11:42:40.326+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-07T11:42:40.353+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=***-postgres-dag, task_id=query_and_return_value, execution_date=20240207T114222, start_date=20240207T114239, end_date=20240207T114240
+[2024-02-07T11:42:40.438+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-07T11:42:40.531+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

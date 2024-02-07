@@ -1,0 +1,1 @@
+[2024-02-06T22:28:42.344+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: senegal_presidential_election_dag.create_candidate_table manual__2024-02-06T22:26:56.887233+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

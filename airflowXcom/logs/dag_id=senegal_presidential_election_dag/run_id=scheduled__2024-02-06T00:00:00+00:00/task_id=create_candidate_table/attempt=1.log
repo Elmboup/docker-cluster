@@ -1,0 +1,32 @@
+[2024-02-07T00:00:03.713+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: senegal_presidential_election_dag.create_candidate_table scheduled__2024-02-06T00:00:00+00:00 [queued]>
+[2024-02-07T00:00:03.744+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: senegal_presidential_election_dag.create_candidate_table scheduled__2024-02-06T00:00:00+00:00 [queued]>
+[2024-02-07T00:00:03.746+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-02-07T00:00:03.800+0000] {taskinstance.py:2191} INFO - Executing <Task(PostgresOperator): create_candidate_table> on 2024-02-06 00:00:00+00:00
+[2024-02-07T00:00:03.816+0000] {standard_task_runner.py:60} INFO - Started process 1815 to run task
+[2024-02-07T00:00:03.838+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'senegal_presidential_election_dag', 'create_candidate_table', 'scheduled__2024-02-06T00:00:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/election_xcom.py', '--cfg-path', '/tmp/tmpt_qnrg3d']
+[2024-02-07T00:00:03.854+0000] {standard_task_runner.py:88} INFO - Job 52: Subtask create_candidate_table
+[2024-02-07T00:00:03.969+0000] {task_command.py:423} INFO - Running <TaskInstance: senegal_presidential_election_dag.create_candidate_table scheduled__2024-02-06T00:00:00+00:00 [running]> on host 4775ae97916b
+[2024-02-07T00:00:04.186+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='el_mboup' AIRFLOW_CTX_DAG_ID='senegal_presidential_election_dag' AIRFLOW_CTX_TASK_ID='create_candidate_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-06T00:00:00+00:00'
+[2024-02-07T00:00:04.191+0000] {sql.py:276} INFO - Executing: 
+   CREATE TABLE IF NOT EXISTS candidatures_presidentielle (
+       id SERIAL PRIMARY KEY,
+       prenom VARCHAR(255),
+       nom VARCHAR(255),
+       parti VARCHAR(255),
+       satut_validation VARCHAR(50)
+   );
+   
+[2024-02-07T00:00:04.207+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-02-07T00:00:04.250+0000] {base.py:83} INFO - Using connection ID 'postgres_conn' for task execution.
+[2024-02-07T00:00:04.266+0000] {sql.py:450} INFO - Running statement: 
+   CREATE TABLE IF NOT EXISTS candidatures_presidentielle (
+       id SERIAL PRIMARY KEY,
+       prenom VARCHAR(255),
+       nom VARCHAR(255),
+       parti VARCHAR(255),
+       satut_validation VARCHAR(50)
+   );
+   , parameters: None
+[2024-02-07T00:00:04.336+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=senegal_presidential_election_dag, task_id=create_candidate_table, execution_date=20240206T000000, start_date=20240207T000003, end_date=20240207T000004
+[2024-02-07T00:00:04.442+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-07T00:00:04.525+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

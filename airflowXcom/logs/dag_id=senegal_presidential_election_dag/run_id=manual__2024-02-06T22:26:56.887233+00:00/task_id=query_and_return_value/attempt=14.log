@@ -1,0 +1,26 @@
+[2024-02-06T23:01:50.670+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: senegal_presidential_election_dag.query_and_return_value manual__2024-02-06T22:26:56.887233+00:00 [queued]>
+[2024-02-06T23:01:50.680+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: senegal_presidential_election_dag.query_and_return_value manual__2024-02-06T22:26:56.887233+00:00 [queued]>
+[2024-02-06T23:01:50.681+0000] {taskinstance.py:2170} INFO - Starting attempt 14 of 15
+[2024-02-06T23:01:50.722+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): query_and_return_value> on 2024-02-06 22:26:56.887233+00:00
+[2024-02-06T23:01:50.756+0000] {standard_task_runner.py:60} INFO - Started process 950 to run task
+[2024-02-06T23:01:50.759+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'senegal_presidential_election_dag', 'query_and_return_value', 'manual__2024-02-06T22:26:56.887233+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/election_xcom.py', '--cfg-path', '/tmp/tmpd2g8k5uq']
+[2024-02-06T23:01:50.788+0000] {standard_task_runner.py:88} INFO - Job 42: Subtask query_and_return_value
+[2024-02-06T23:01:50.940+0000] {task_command.py:423} INFO - Running <TaskInstance: senegal_presidential_election_dag.query_and_return_value manual__2024-02-06T22:26:56.887233+00:00 [running]> on host 4775ae97916b
+[2024-02-06T23:01:51.073+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='el_mboup' AIRFLOW_CTX_DAG_ID='senegal_presidential_election_dag' AIRFLOW_CTX_TASK_ID='query_and_return_value' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T22:26:56.887233+00:00' AIRFLOW_CTX_TRY_NUMBER='14' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T22:26:56.887233+00:00'
+[2024-02-06T23:01:51.082+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/election_xcom.py", line 42, in query_table_and_return_value
+    serialized_candidates = [serialize_legacy_row(legacyRow(*row)) for row in result]
+  File "/opt/airflow/dags/election_xcom.py", line 42, in <listcomp>
+    serialized_candidates = [serialize_legacy_row(legacyRow(*row)) for row in result]
+NameError: name 'legacyRow' is not defined
+[2024-02-06T23:01:51.104+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=senegal_presidential_election_dag, task_id=query_and_return_value, execution_date=20240206T222656, start_date=20240206T230150, end_date=20240206T230151
+[2024-02-06T23:01:51.164+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 42 for task query_and_return_value (name 'legacyRow' is not defined; 950)
+[2024-02-06T23:01:51.229+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-06T23:01:51.263+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

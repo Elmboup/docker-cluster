@@ -1,0 +1,1 @@
+[2024-02-06T22:14:32.002+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: airflow-postgres-dag.insert_data manual__2024-02-06T21:31:41.150201+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

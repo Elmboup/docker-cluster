@@ -1,0 +1,13 @@
+[2024-02-07T16:26:30.276+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: senegal_presidential_election_dag.query_and_return_value manual__2024-02-07T16:26:19.860121+00:00 [queued]>
+[2024-02-07T16:26:30.290+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: senegal_presidential_election_dag.query_and_return_value manual__2024-02-07T16:26:19.860121+00:00 [queued]>
+[2024-02-07T16:26:30.291+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-02-07T16:26:30.324+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): query_and_return_value> on 2024-02-07 16:26:19.860121+00:00
+[2024-02-07T16:26:30.333+0000] {standard_task_runner.py:60} INFO - Started process 7857 to run task
+[2024-02-07T16:26:30.343+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'senegal_presidential_election_dag', 'query_and_return_value', 'manual__2024-02-07T16:26:19.860121+00:00', '--job-id', '282', '--raw', '--subdir', 'DAGS_FOLDER/election_xcom.py', '--cfg-path', '/tmp/tmpibw2jvx4']
+[2024-02-07T16:26:30.349+0000] {standard_task_runner.py:88} INFO - Job 282: Subtask query_and_return_value
+[2024-02-07T16:26:30.444+0000] {task_command.py:423} INFO - Running <TaskInstance: senegal_presidential_election_dag.query_and_return_value manual__2024-02-07T16:26:19.860121+00:00 [running]> on host 4775ae97916b
+[2024-02-07T16:26:30.609+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='el_mboup' AIRFLOW_CTX_DAG_ID='senegal_presidential_election_dag' AIRFLOW_CTX_TASK_ID='query_and_return_value' AIRFLOW_CTX_EXECUTION_DATE='2024-02-07T16:26:19.860121+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-07T16:26:19.860121+00:00'
+[2024-02-07T16:26:30.642+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-07T16:26:30.661+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=senegal_presidential_election_dag, task_id=query_and_return_value, execution_date=20240207T162619, start_date=20240207T162630, end_date=20240207T162630
+[2024-02-07T16:26:30.722+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-07T16:26:30.759+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
